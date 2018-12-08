@@ -1,0 +1,27 @@
+BackBundle\Entity\Event:
+    type: entity
+    table: null
+    repositoryClass: BackBundle\Repository\EventRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        datedeut:
+            type: datetime
+        datefin:
+            type: datetime
+        eventtype:
+            type: string
+            length: 255
+    manyToOne:
+        stade:
+            targetEntity: Stade
+            inversedBy: event
+            cascade: ["persist"]
+    lifecycleCallbacks: {  }
